@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<a href="{% url 'homepage' %}" style="font-weight: bolder;"> Back </a>
+
+<body style="font-family: monospace;text-align: center;background-color: gray;">
+
+    <h1 style="text-align: center;font-weight:lighter;">History</h1>
+
+    <p style="height: 10px;"></p>
+
+
+
+    <form action="{% url 'foodroutine-history' %}" method="post">
+        {% csrf_token %}
+        <label for="mealdropdown" >Get your Target Meals History :</label>
+    <select name="mealdropdown" id="mealdropdown" style="background-color: grey">
+        <option value="Breakfast">breakfast</option>
+        <option value="Lunch" style="font-family: monospace;">lunch</option>
+        <option value="Dinner" style="font-family: monospace;">dinner</option>
+        <option value="Snacks" style="font-family: monospace;">snacks</option>
+    </select><b></b>
+         <input type="submit" value="Get History" name="get_targetfoodroutine_history"  style="font-family: monospace;background-color: grey">
+    </form>
+
+    <p style="height: 10px;"></p>
+
+
+
+    <form action="{% url 'foodroutine-history' %}" method="post">
+        {% csrf_token %}
+        <label for="mealdropdown" >Get your Target Meal By Date :</label>
+    <select name="mealdropdown" id="mealdropdown" style="background-color: grey">
+        <option value="Breakfast" style="font-family: monospace;">breakfast</option>
+        <option value="Lunch" style="font-family: monospace;">lunch</option>
+        <option value="Dinner" style="font-family: monospace;">dinner</option>
+    </select><b></b>
+    <label for="getbydatestart"> from : </label>
+         <input type="date" value="date" name="from_date" style="font-family: monospace;background-color: grey">
+    <label for="getbydateend"> to : </label>
+         <input type="date" value="date" name="to_date" style="font-family: monospace;background-color: grey;">
+         <input type="submit" value="GetByDate" name="get_targetfoodroutine_history_bydate" style="font-family: monospace;background-color: grey;">
+    </form>
+
+
+    <p style="height: 15px;"></p>
+
+   
+
+    <form action="{% url 'foodroutine-history' %}" method="post">
+        {% csrf_token %}
+        <label for="mealdropdown">Get your Logged Meal History :</label>
+    <select name="mealdropdown" id="mealdropdown" style="background-color: grey">
+        <option value="Breakfast" style="font-family: monospace;">breakfast</option>
+        <option value="Lunch" style="font-family: monospace;">lunch</option>
+        <option value="Dinner" style="font-family: monospace;">dinner</option>
+    </select><b></b>
+         <input type="submit" value="Get History" name="get_loggedmeals_history" style="font-family: monospace;background-color: grey">
+    </form>
+
+    <p style="height: 20px;"></p>
+
+
+
+
+    <form action="{% url 'foodroutine-history' %}" method="post">
+        {% csrf_token %}
+        <label for="mealdropdown">Get your Logged Meal By Date :</label>
+    <select name="mealdropdown" id="mealdropdown" style="background-color: grey">
+        <option value="Breakfast" style="font-family: monospace;">breakfast</option>
+        <option value="Lunch" style="font-family: monospace;">lunch</option>
+        <option value="Dinner" style="font-family: monospace;">dinner</option>
+    </select><b></b>
+    <label for="getlogbydatestart"> from : </label>
+         <input type="date" value="date" name="from_date" style="font-family: monospace;background-color: grey">
+    <label for="getlogbydateend"> to : </label>
+         <input type="date" value="date" name="to_date" style="font-family: monospace;background-color: grey">
+         <input type="submit" value="GetByDate" name="get_loggedmeals_history_bydate" style="font-family: monospace;background-color: grey">
+    </form>
+
+
+    
+</body>
+</html>

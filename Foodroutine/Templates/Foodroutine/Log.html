@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="font-family: monospace;text-align: center;background-color: gray;">
+
+    <form action="{% url 'log'  meal_name='unknowmeal' %}" method="post">
+        
+    <a href="{% url 'homepage' %}" style="font-weight: bolder;"> Back </a>
+
+        {% csrf_token %}
+        <h1 style="font-weight: lighter;">Log Your {{meal_name}}</h1>
+        <pre>Example meal recipe : chicken Breast 200gm with four eggs cooked
+                              with ghee and also had 50gm of oats with milk,   </pre>
+
+        <pre>calories : 1000
+        </pre>
+        {{ form.as_p }}
+        <input type="hidden" value="{{meal_name}}" name="mealname">
+        <input type="submit" value="Save the meal" name="save" style="text-align:center;background-color: gray;">
+    </form>
+</body>
+</html>

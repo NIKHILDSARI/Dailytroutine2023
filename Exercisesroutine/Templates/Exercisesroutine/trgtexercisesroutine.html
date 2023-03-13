@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="font-family: monospace;text-align: center;background-color: gray;">
+    
+    <a href="{% url 'homepage' %}">Back</a>
+
+    <form action="{% url 'Targetexercises' %}?bodypart_number=0 " method="post">
+        
+        <h1 style="font-weight: lighter;">chest</h1>
+        {% csrf_token %}
+        {{ Targetchestworkoutform.as_p }}
+        <input type="submit" value="Set chest workout" name="save" style="background-color: gray;">
+    </form>
+
+    <form action="{% url 'Targetexercises' %}?bodypart_number=1 " method="post">
+        <h1 style="font-weight: lighter;">back</h1>
+        {% csrf_token %}
+        {{ Targetbackworkoutform.as_p }}
+        <input type="submit" value="Set back workout" name="save" style="background-color: gray;">
+    </form>
+
+    <form action="{% url 'Targetexercises' %}?bodypart_number=2 " method="post">
+        <h1 style="font-weight: lighter;">leg</h1>
+        {% csrf_token %}
+        {{ Targetlegworkoutform.as_p }}
+        <input type="submit" value="Set leg workout" name="save">
+    </form>
+
+    <form action="{% url 'Targetexercises' %}?bodypart_number=3 " method="post">
+        <h1 style="font-weight: lighter;">core</h1>
+        {% csrf_token %}
+        {{ Targetcoreworkoutform.as_p}}
+        <input type="submit" value="Set core workout" name="save" style="background-color: gray;">
+    </form>
+
+    <form action="{% url 'Targetexercises' %}?bodypart_number=4 " method="post">
+        <h1 style="font-weight: lighter;">shoulder</h1>
+        {% csrf_token %}
+        {{ Targetshoulderworkoutform.as_p }}
+        <input type="submit" value="Set shoulder workout" name="save" style="background-color: gray;">
+    </form>
+
+    
+    
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="font-family: monospace;background-color: gray;">
+     
+
+    
+    <form action="{% url 'homepage' %}" method="post">
+        {% csrf_token %}
+        <input type="submit" value="Logout" name="logout" style="font-family: monospace;background-color: gold;">
+    </form>
+
+
+
+    <h1 style="text-align: center;font-weight:lighter;">Hi {{user}} </h1>
+
+
+
+    <form action="{% url 'homepage' %}" method="post"  style="text-align: center;">
+        {% csrf_token %}
+    <h1 style="font-weight: lighter;" >Log or set FoodRoutine</h1>
+    <label for="mealdropdown">Log Your Meal :</label>
+    <select name="mealdropdown" id="mealdropdown" style="background-color: gray;" >
+        <option value="Breakfast" style="font-family: monospace;">breakfast</option>
+        <option value="Lunch"  style="font-family: monospace;">lunch</option>
+        <option value="Dinner"  style="font-family: monospace;">dinner</option>
+    </select><b></b>
+    <input type="submit" value="Log" name="loguser_meal" style="font-family: monospace;background-color: gray;">
+</form>
+
+
+<p style="height: 0px;"></p>
+
+
+
+    <form action="{% url 'setroutine' %}" method="post"  style="text-align: center;">
+        {% csrf_token %}
+    <label for="mealdropdown" >Set Target Routine :</label>
+    <select name="mealdropdown" id="mealdropdown" style="background-color: gray;" >
+        <option value="breakfast"  style="font-family: monospace;">Breakfast</option>
+        <option value="lunch"  style="font-family: monospace;">Lunch</option>
+        <option value="dinner"  style="font-family: monospace;">Dinner</option>
+        <option value="snacks"  style="font-family: monospace;">Snacks</option>
+    </select><b></b>
+    <input type="submit" value="Set" name="fromhomepage_settargtfoodroutine_dropdown" style="font-family: monospace;background-color: gray;" >
+</form>
+
+
+<p style="height: 0px;"></p>
+
+
+
+<form action="{% url 'homepage' %}" method="post"  style="text-align: center;">
+    {% csrf_token %}
+    <label for="Foodroutine-history"> Food Routine History : </label>
+    <input type="submit" value="History" name="Foodroutine_history" style="font-family: monospace;background-color: gray;">
+</form>
+
+
+<p style="height: 0px;"></p>
+
+
+
+<!-- ********************************** EXERCISES HOME PAGE *********************************** -->
+
+
+
+
+<form action="{% url 'homepage' %}" method="post"  style="text-align: center;">
+    {% csrf_token %}
+    <h1  style="font-weight: lighter;" >log or set WorkoutRoutine</h1>
+    <label for="set_workout_routine" >Set Your Workout Routine :</label>
+    <input type="submit" value="Set Routine" name="set_workout_routine" style="font-family: monospace;background-color: gray;">
+</form>
+
+<p style="height: 0px;"></p>
+
+
+
+
+<form action="{% url 'homepage' %}" method="post"  style="text-align: center;">
+    {% csrf_token %}
+    <label for="start_workout" >Start Workout : </label>
+    <input type="submit" value="Start Logging" name="start_workout" style="font-family: monospace;background-color: gray;">
+</form>
+
+
+<p style="height: 0px;"></p>
+
+
+
+<form action="{% url 'homepage' %}" method="post"  style="text-align: center;">
+    {% csrf_token %}
+    <label for="user_exercises-history" > Exercises Routine History : </label>
+    <input type="submit" value="History" name="user_exercises-history" style="font-family: monospace;background-color: gray;">
+</form>
+
+
+<p style="height: 0px;"></p>
+
+
+
+</body>
+</html>

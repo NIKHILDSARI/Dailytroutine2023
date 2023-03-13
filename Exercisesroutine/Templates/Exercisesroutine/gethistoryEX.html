@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body  style="font-family: monospace;background-color: gray;text-align: center;">
+
+        
+        <a href="{% url 'exercises-history' %}">Back</a>
+        
+        {% if received  == 'trgthistory' %}
+        <h1 style="font-weight: lighter;">Targets you have set</h1>
+                {% for key, item in context.items %}
+
+                <h1 style="font-weight: lighter;">{{item.part_inst.date}}</h1>
+
+                <p>Workout1 : {{item.part_inst.workout1}}</p>
+
+                <p>Workout2 : {{item.part_inst.workout2}}</p>
+
+                <p>Workout3 : {{item.part_inst.workout3}}</p>
+
+                <p>Workout4 : {{item.part_inst.workout4}}</p>
+
+                {% endfor %}  
+
+        {% elif received == 'loghistory' or received == 'loghistorybydatebutton' %}
+
+                {% for key, item in context.items %}
+
+                <h1 style="font-weight: lighter;">{{item.part_inst.date}}</h1>
+
+                <p style="font-weight: bold;">{{item.part_inst.exercises}}</p>
+
+                <p>Set1 weight(kg) : {{item.part_inst.set1_weight_inkg}}</p>
+
+                <p>Set1 reps : {{item.part_inst.set1}}</p>
+
+                <p>Set2 weight(kg) : {{item.part_inst.set2_weight_inkg}}</p>
+
+                <p>Set2 reps : {{item.part_inst.set2}}</p>
+
+                <p>Set3 weight(kg) : {{item.part_inst.set3_weight_inkg}}</p>
+
+                <p>Set3 reps : {{item.part_inst.set3}}</p>
+                
+                <p>Set4 weight(kg) : {{item.part_inst.set4_weight_inkg}}</p>
+
+                <p>Set4 reps : {{item.part_inst.set4}}</p>
+
+                {% endfor %}  
+        
+        {% else %}
+
+        {% endif %}
+
+</body>
+</html>

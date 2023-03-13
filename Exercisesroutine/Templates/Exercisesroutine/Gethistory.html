@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<a href="{% url 'homepage' %}">Back</a>
+
+<body style="font-family: monospace;background-color: gray;text-align: center;">
+
+    <h1 style="font-weight: lighter;" >History</h1>
+
+    <p style="height: 0px;"></p>
+
+    <form action="{% url 'exercises-history' %}" method="post">
+        {% csrf_token %}
+        <label for="trgthistory"> Get Target Workout Routine</label>
+        <select name="trgthistory" id="trgthistory" style="background-color: gray">
+            <option value="Chest">Chest</option>
+            <option value="Back">Back</option>
+            <option value="Leg">Leg</option>
+            <option value="Core">Core</option>
+            <option value="Shoulder">Shoulder</option>
+        </select>
+        <input type="submit" value="Get" name="get_trgt_workout_routine_by_bodypart" style="background-color: gray" >
+    </form>
+
+    <p style="height: 10px;"></p>
+
+    <form action="{% url 'exercises-history' %}" method="post">
+        {% csrf_token %}
+        <label for="loghistory"> Get all logged Workouts </label>
+        <input type="submit" value="Get" name="loghistory" style="background-color: gray">
+    </form>
+
+    <p style="height: 10px;"></p>
+
+    <form action="{% url 'exercises-history' %}" method="post">
+        {% csrf_token %}
+        <label for="loghistorybydate"> Get logged Workouts</label>
+        <select name="loghistorybydate" id="loghistorybydate" style="background-color: gray">
+            <option value="Chest">Chest</option>
+            <option value="Back">Back</option>
+            <option value="Leg">Leg</option>
+            <option value="Core">Core</option>
+            <option value="Shoulder">Shoulder</option>
+        </select>
+        <label for="from"> from : </label>
+        <input type="date" value="date" name="from" style="background-color: gray">
+        <label for="to"> to : </label>
+        <input type="date" value="date" name="to" style="background-color: gray" >
+        <input type="submit" value="Get" name="loghistorybydatebutton" style="background-color: gray" >
+    </form>
+
+</body>
+</html>

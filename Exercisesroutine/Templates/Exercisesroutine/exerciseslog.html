@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="font-family: monospace;text-align: center;background-color: gray;">
+
+  <a href="{% url 'homepage' %}">Back</a>
+
+
+<h1 style="font-weight: lighter;">Lets go</h1>
+
+<p style="height: 10px;"></p>
+
+    {% if chestworkout %}
+  <form action="{% url 'logexercises' %}?bodypart=chest" method="post">
+    {% csrf_token %}
+    <input type="submit" value="Start Chest workout" style="background-color: gray;">
+    <label for="exercises">Chest:</label>
+    <select name="exercises" id="exercises" style="background-color: gray;">
+      <option value="{{ chestworkout.workout1 }}">{{ chestworkout.workout1 }}</option>
+      <option value="{{ chestworkout.workout2 }}">{{ chestworkout.workout2 }}</option>
+      <option value="{{ chestworkout.workout3 }}">{{ chestworkout.workout3 }}</option>
+      <option value="{{ chestworkout.workout4 }}">{{ chestworkout.workout4 }}</option>
+    </select><br><br>
+  </form>
+{% else %}
+  <p>Please Set your Chest Routine for Logging</p>
+</script>
+{% endif %}
+
+<p style="height: 0px;"></p>
+
+{% if backworkout %}
+    <form action="{% url 'logexercises' %}?bodypart=back" method="post">
+        {% csrf_token %}
+        <input type="submit" value="Start Back workout" style="background-color: gray;">
+        <label for="exercises">Back:</label>
+        <select name="exercises" id="exercises" style="background-color: gray;">
+        <option value="{{backworkout.workout1}}">{{backworkout.workout1}}</option>
+        <option value="{{backworkout.workout2}}">{{backworkout.workout2}}</option>
+        <option value="{{backworkout.workout3}}">{{backworkout.workout3}}</option>
+        <option value="{{backworkout.workout4}}">{{backworkout.workout4}}</option>
+        </select><br><br>
+        
+        
+    </form>
+    {% else %}
+  <p>Please Set your Back Routine for Logging</p>
+    
+
+  {% endif %}
+
+
+  <p style="height: 0px;"></p>
+
+  {% if legworkout %}
+  <form action="{% url 'logexercises' %}?bodypart=leg" method="post">
+    {% csrf_token %}
+    <input type="submit" value="Start Leg workout" style="background-color: gray;">
+    <label for="exercises">leg:</label>
+    <select name="exercises" id="exercises" style="background-color: gray;">
+      <option value="{{legworkout.workout1}}">{{legworkout.workout1}}</option>
+      <option value="{{legworkout.workout2}}">{{legworkout.workout2}}</option>
+      <option value="{{legworkout.workout3}}">{{legworkout.workout3}}</option>
+      <option value="{{legworkout.workout4}}">{{legworkout.workout4}}</option>
+    </select><br><br>
+  </form>
+{% else %}
+<p>Please Set your Leg Routine for Logging</p>
+
+{% endif %}
+
+<p style="height: 0px;"></p>
+
+
+  {% if coreworkout %}
+    <form action="{% url 'logexercises' %}?bodypart=core" method="post">
+        {% csrf_token %}
+        <input type="submit" value="Start Core workout" style="background-color: gray;">
+        <label for="exercises">Core:</label>
+        <select name="exercises" id="exercises" style="background-color: gray;">
+        <option value="{{coreworkout.workout1}}">{{coreworkout.workout1}}</option>
+        <option value="{{coreworkout.workout2}}">{{coreworkout.workout2}}</option>
+        <option value="{{coreworkout.workout3}}">{{coreworkout.workout3}}</option>
+        <option value="{{coreworkout.workout4}}">{{coreworkout.workout4}}</option>
+        </select><br><br>
+    </form>
+    {% else %}
+  <p>Please Set your Core Routine for Logging</p>
+    
+{% endif %}
+
+
+<p style="height: 0px;"></p>
+
+{% if shoulderworkout %}
+    <form action="{% url 'logexercises' %}?bodypart=shoulder" method="post">
+        {% csrf_token %}
+        <input type="submit" value="Start Shoulder workout" style="background-color: gray;">
+        <label for="exercises">Shoulder:</label>
+        <select name="exercises" id="exercises" style="background-color: gray;">
+        <option value="{{shoulderworkout.workout1}}">{{shoulderworkout.workout1}}</option>
+        <option value="{{shoulderworkout.workout2}}">{{shoulderworkout.workout2}}</option>
+        <option value="{{shoulderworkout.workout3}}">{{shoulderworkout.workout3}}</option>
+        <option value="{{shoulderworkout.workout4}}">{{shoulderworkout.workout4}}</option>
+        </select><br><br>
+
+    </form>
+    {% else %}
+  <p>Please Set your Shoulder Routine for Logging</p>
+    
+{% endif %}
+     
+      
+    
+</body>
+</html>
+
+
+

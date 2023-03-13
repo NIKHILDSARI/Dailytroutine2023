@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="font-family: monospace;background-color: gray;text-align: center;">
+    
+ <a href="{% url 'main' %}" style="font-weight: bolder;"> Home </a>
+
+<form action="{% url 'auth' %}" method="POST">
+    <h1 style="font-weight: lighter;"> Dailyroutine2023 </h1>
+    <p style="font-weight: lighter;font-size: small;">sample credentials: username: testuser1 ,password: testpass1 </p>
+
+    {% csrf_token %}
+    <label for="username">Username:</label>
+    <input type="text" name="username" id="username" required style="background-color: darkgray;">
+    <br>
+  <p style="height: 0px;"></p>
+
+    <label for="password">Password:</label>
+    <input type="password" name="password" id="password" required style="background-color: darkgray;">
+    <br>
+  <p style="height: 0px;"></p>
+
+    <input type="submit" value="Login" name="login" style="background-color: darkgray;">
+    <a href="{% url 'createuser' %}"> Create account </a>
+  </form>
+
+  <p style="height: 10px;"></p>
+
+
+  <form action="{% url 'auth' %}" method="post">
+    <h1 style="font-weight: lighter;font-size:larger;" >Send Message  to Nikhil : <input type="submit" value="send" name="send_message" style="background-color: gray;"></h1> 
+    
+    {% csrf_token %}
+    {{ message.media }}
+    {{ message.as_p }}
+    
+  </form>
+
+   
+</body>
+</html>
